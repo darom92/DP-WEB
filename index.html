@@ -4,69 +4,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#10101a">
-  <meta name="description" content="Creamos páginas web modernas, rápidas y adaptadas a móviles para impulsar tu negocio.">
-  <title>PixelNova | Diseño web para tu negocio</title>
+  <meta name="theme-color" content="#080d18">
+  <meta name="description" content="workinbrands crea páginas web modernas para negocios que quieren crecer en Internet.">
+  <title>workinbrands | Diseño web profesional</title>
+
   <style>
     :root {
-      --fondo: #10101a;
-      --panel: #191927;
-      --texto: #f7f5ff;
-      --suave: #b6b3c9;
-      --acento: #a78bfa;
-      --acento2: #6d5dfc;
-      --borde: rgba(255,255,255,.12);
+      --fondo: #080d18;
+      --panel: #101a2b;
+      --panel2: #142238;
+      --texto: #f4f8ff;
+      --suave: #a6b4ca;
+      --azul: #168cff;
+      --azul-claro: #55b7ff;
+      --borde: rgba(148, 183, 224, .17);
+      --verde: #25d366;
     }
 
     * { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
 
     body {
       margin: 0;
       background: var(--fondo);
       color: var(--texto);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
+      line-height: 1.65;
+    }
+
+    body, input, textarea, button {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     a { color: inherit; text-decoration: none; }
 
+    button, input, textarea { font-size: 1rem; }
+
     .contenedor {
-      width: min(1100px, 90%);
+      width: min(1120px, 90%);
       margin: auto;
     }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      background: rgba(16,16,26,.94);
-      backdrop-filter: blur(12px);
+      z-index: 20;
+      background: rgba(8, 13, 24, .94);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--borde);
     }
 
     nav {
-      min-height: 72px;
+      min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 18px;
     }
 
     .logo {
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: -.5px;
+      font-size: 1.35rem;
+      font-weight: 850;
+      letter-spacing: -.8px;
+      white-space: nowrap;
     }
 
-    .logo span { color: var(--acento); }
+    .logo span { color: var(--azul-claro); }
 
     .enlaces {
       display: flex;
       align-items: center;
       gap: 22px;
-      font-size: .92rem;
+      font-size: .9rem;
       color: var(--suave);
     }
 
@@ -74,63 +87,81 @@
 
     .boton {
       display: inline-flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       gap: 8px;
-      padding: 12px 20px;
+      padding: 13px 20px;
+      border: 1px solid transparent;
       border-radius: 12px;
-      font-weight: 750;
-      background: linear-gradient(135deg, var(--acento2), var(--acento));
+      background: linear-gradient(135deg, #0875ed, #22a4ff);
       color: white;
-      border: 0;
+      font-weight: 750;
       cursor: pointer;
-      transition: transform .2s, opacity .2s;
+      transition: transform .2s, filter .2s;
     }
 
-    .boton:hover { transform: translateY(-2px); }
+    .boton:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+    }
 
     .boton-secundario {
       background: transparent;
-      border: 1px solid var(--borde);
+      border-color: var(--borde);
     }
 
     .portada {
-      padding: 100px 0 85px;
+      position: relative;
+      overflow: hidden;
+      padding: 105px 0 85px;
       text-align: center;
       background:
-        radial-gradient(ellipse at 50% 0%, rgba(109,93,252,.22), transparent 60%);
+        radial-gradient(ellipse at 50% 0%, rgba(22, 140, 255, .2), transparent 65%);
+    }
+
+    .portada::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      top: 150px;
+      left: -220px;
+      border-radius: 50%;
+      background: rgba(22, 140, 255, .12);
+      filter: blur(65px);
+      pointer-events: none;
     }
 
     .etiqueta {
       display: inline-block;
-      padding: 7px 13px;
-      border: 1px solid rgba(167,139,250,.35);
-      background: rgba(167,139,250,.08);
-      color: #d8caff;
+      padding: 7px 14px;
+      border: 1px solid rgba(85, 183, 255, .3);
+      background: rgba(22, 140, 255, .08);
+      color: #a9dcff;
       border-radius: 999px;
       font-size: .85rem;
-      margin-bottom: 22px;
+      margin-bottom: 23px;
     }
 
     h1 {
-      font-size: clamp(2.5rem, 7vw, 4.8rem);
-      line-height: 1.08;
-      letter-spacing: -2px;
-      max-width: 850px;
-      margin: 0 auto 22px;
+      font-size: clamp(2.6rem, 7vw, 5.1rem);
+      line-height: 1.07;
+      letter-spacing: -2.7px;
+      max-width: 900px;
+      margin: 0 auto 24px;
     }
 
     h1 span {
-      background: linear-gradient(90deg, #c4b5fd, #818cf8);
+      background: linear-gradient(90deg, #55b7ff, #168cff);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
     .introduccion {
-      color: var(--suave);
-      max-width: 650px;
+      max-width: 690px;
       margin: 0 auto 30px;
+      color: var(--suave);
       font-size: 1.08rem;
     }
 
@@ -142,31 +173,36 @@
     }
 
     .confianza {
-      margin-top: 45px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 24px;
+      gap: 23px;
+      margin-top: 42px;
       color: var(--suave);
       font-size: .9rem;
     }
 
-    section { padding: 78px 0; }
+    section { padding: 80px 0; }
 
     .titulo-seccion {
+      max-width: 680px;
+      margin: 0 auto 40px;
       text-align: center;
-      max-width: 650px;
-      margin: 0 auto 38px;
     }
 
-    .titulo-seccion h2 {
-      font-size: clamp(1.9rem, 5vw, 2.8rem);
-      letter-spacing: -1px;
+    .titulo-seccion h2,
+    .sobre-contenido h2,
+    .contacto-caja h2 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 5vw, 3rem);
       line-height: 1.2;
-      margin: 0 0 12px;
+      letter-spacing: -1px;
     }
 
-    .titulo-seccion p { color: var(--suave); }
+    .titulo-seccion p,
+    .sobre-contenido p {
+      color: var(--suave);
+    }
 
     .rejilla {
       display: grid;
@@ -175,21 +211,23 @@
     }
 
     .tarjeta {
-      padding: 25px;
-      background: var(--panel);
+      min-width: 0;
+      padding: 26px;
       border: 1px solid var(--borde);
       border-radius: 18px;
+      background: linear-gradient(145deg, var(--panel), #0d1524);
     }
 
     .icono {
       display: grid;
       place-items: center;
-      width: 48px;
-      height: 48px;
+      width: 49px;
+      height: 49px;
+      margin-bottom: 19px;
+      border: 1px solid rgba(85, 183, 255, .2);
       border-radius: 14px;
-      background: rgba(167,139,250,.12);
-      font-size: 1.5rem;
-      margin-bottom: 18px;
+      background: rgba(22, 140, 255, .1);
+      font-size: 1.45rem;
     }
 
     .tarjeta h3 { margin: 0 0 10px; }
@@ -200,72 +238,173 @@
       font-size: .95rem;
     }
 
-    .proyecto {
-      overflow: hidden;
-      padding: 0;
-    }
+    .proyecto { overflow: hidden; padding: 0; }
 
-    .imagen-proyecto {
-      min-height: 160px;
+    .proyecto-visual {
+      min-height: 175px;
       display: grid;
       place-items: center;
-      font-size: 3.5rem;
-      background: linear-gradient(135deg, #37306c, #1c5964);
+      padding: 20px;
+      background: linear-gradient(135deg, #123c70, #1765a0);
     }
 
-    .imagen-proyecto.dos {
-      background: linear-gradient(135deg, #633c69, #272b58);
+    .proyecto-visual.dos {
+      background: linear-gradient(135deg, #153e65, #243b70);
     }
 
-    .imagen-proyecto.tres {
-      background: linear-gradient(135deg, #245a56, #273452);
+    .proyecto-visual.tres {
+      background: linear-gradient(135deg, #124f60, #173765);
     }
 
-    .proyecto-texto { padding: 22px; }
+    .ventana-demo {
+      width: 100%;
+      max-width: 230px;
+      padding: 13px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 12px;
+      background: rgba(8,13,24,.8);
+      box-shadow: 0 15px 35px rgba(0,0,0,.2);
+    }
 
-    .proyecto-texto h3 { margin-top: 0; }
+    .puntos {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 15px;
+    }
+
+    .puntos i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #55b7ff;
+    }
+
+    .linea {
+      height: 7px;
+      margin: 8px 0;
+      border-radius: 5px;
+      background: rgba(150,200,255,.22);
+    }
+
+    .linea.corta { width: 55%; }
+    .linea.azul { width: 70%; background: #168cff; }
+
+    .proyecto-texto { padding: 23px; }
+
+    .proyecto-texto h3 { margin: 0 0 8px; }
 
     .proyecto-texto p {
       color: var(--suave);
       font-size: .92rem;
     }
 
+    .nota {
+      color: var(--suave);
+      font-size: .85rem;
+      text-align: center;
+      margin-top: 23px;
+    }
+
     .sobre {
-      background: rgba(255,255,255,.025);
+      background: rgba(255,255,255,.02);
       border-top: 1px solid var(--borde);
       border-bottom: 1px solid var(--borde);
     }
 
     .sobre-contenido {
-      max-width: 760px;
-      text-align: center;
+      max-width: 780px;
       margin: auto;
+      text-align: center;
     }
 
-    .sobre-contenido p { color: var(--suave); }
+    .sobre-contenido .etiqueta { margin-bottom: 18px; }
 
     .contacto-caja {
-      text-align: center;
-      padding: 45px 28px;
-      border: 1px solid rgba(167,139,250,.3);
+      padding: 42px 30px;
+      border: 1px solid rgba(22,140,255,.28);
       border-radius: 24px;
-      background: radial-gradient(ellipse at top, rgba(109,93,252,.18), transparent 75%), var(--panel);
+      background: radial-gradient(ellipse at top, rgba(22,140,255,.14), transparent 75%), var(--panel);
     }
 
-    .contacto-caja h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin: 0 0 12px;
-    }
-
-    .contacto-caja p {
+    .contacto-caja > p {
+      max-width: 620px;
+      margin: 0 auto 30px;
       color: var(--suave);
-      max-width: 550px;
-      margin: 0 auto 25px;
+      text-align: center;
     }
+
+    .formulario {
+      max-width: 650px;
+      margin: auto;
+      display: grid;
+      gap: 17px;
+    }
+
+    .campo {
+      display: grid;
+      gap: 7px;
+    }
+
+    .campo label { font-weight: 650; }
+
+    .campo input,
+    .campo textarea,
+    .campo select {
+      width: 100%;
+      padding: 13px 14px;
+      color: var(--texto);
+      background: #0a1220;
+      border: 1px solid var(--borde);
+      border-radius: 10px;
+      outline: none;
+    }
+
+    .campo input:focus,
+    .campo textarea:focus,
+    .campo select:focus {
+      border-color: var(--azul);
+      box-shadow: 0 0 0 3px rgba(22,140,255,.12);
+    }
+
+    .campo textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .campo select option {
+      background: #101a2b;
+      color: white;
+    }
+
+    .privacidad {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--suave);
+      font-size: .85rem;
+    }
+
+    .privacidad input {
+      margin-top: 5px;
+      accent-color: var(--azul);
+    }
+
+    .formulario .boton { width: 100%; }
+
+    .aviso {
+      display: none;
+      padding: 15px;
+      border: 1px solid rgba(85,183,255,.35);
+      border-radius: 10px;
+      background: rgba(22,140,255,.1);
+      color: #c6e7ff;
+    }
+
+    .aviso.visible { display: block; }
 
     footer {
+      padding: 26px 0;
       border-top: 1px solid var(--borde);
-      padding: 25px 0;
       color: var(--suave);
       font-size: .88rem;
     }
@@ -273,38 +412,79 @@
     .pie-contenido {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 12px;
     }
 
+    .whatsapp {
+      position: fixed;
+      right: 19px;
+      bottom: 19px;
+      z-index: 30;
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: var(--verde);
+      box-shadow: 0 7px 25px rgba(0,0,0,.35);
+      transition: transform .2s;
+    }
+
+    .whatsapp:hover { transform: scale(1.07); }
+
+    .whatsapp svg { width: 31px; height: 31px; }
+
+    .whatsapp-etiqueta {
+      position: absolute;
+      right: 70px;
+      padding: 7px 11px;
+      white-space: nowrap;
+      border: 1px solid var(--borde);
+      border-radius: 8px;
+      background: var(--panel);
+      font-size: .82rem;
+      font-weight: 650;
+    }
+
     @media (max-width: 760px) {
-      .enlaces { gap: 12px; font-size: .82rem; }
-      .enlaces .contacto-nav { display: none; }
+      .enlaces { gap: 13px; font-size: .82rem; }
+      .enlaces .ocultar-movil { display: none; }
       .portada { padding: 75px 0 65px; }
       section { padding: 60px 0; }
       .rejilla { grid-template-columns: 1fr; }
-      .tarjeta { padding: 22px; }
-      h1 { letter-spacing: -1.4px; }
+      .tarjeta { padding: 23px; }
+      .proyecto { padding: 0; }
+      h1 { letter-spacing: -1.6px; }
+      .contacto-caja { padding: 30px 18px; }
     }
 
-    @media (max-width: 380px) {
-      .logo { font-size: 1.05rem; }
-      .enlaces { gap: 9px; font-size: .76rem; }
+    @media (max-width: 390px) {
       .contenedor { width: 92%; }
+      .logo { font-size: 1.12rem; }
+      .enlaces { gap: 9px; font-size: .77rem; }
+      .acciones .boton { width: 100%; }
+      .whatsapp { width: 55px; height: 55px; right: 14px; bottom: 14px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
-<body>
 
+<body>
   <header>
-    <nav class="contenedor" aria-label="Navegación principal">
-      <a class="logo" href="#inicio">Pixel<span>Nova</span></a>
+    <nav class="contenedor" aria-label="Menú principal">
+      <a class="logo" href="#inicio">workin<span>brands</span></a>
       <div class="enlaces">
         <a href="#servicios">Servicios</a>
         <a href="#proyectos">Proyectos</a>
-        <a href="#sobre">Nosotros</a>
-        <a class="contacto-nav" href="#contacto">Contacto</a>
+        <a class="ocultar-movil" href="#nosotros">Nosotros</a>
+        <a href="#demo">Reservar demo</a>
       </div>
     </nav>
   </header>
@@ -312,19 +492,19 @@
   <main>
     <section class="portada" id="inicio">
       <div class="contenedor">
-        <span class="etiqueta">✦ Diseño web para negocios con ambición</span>
+        <span class="etiqueta">✦ Tu próxima web empieza aquí</span>
         <h1>Tu negocio merece una web <span>extraordinaria.</span></h1>
         <p class="introduccion">
-          Creamos páginas web modernas, atractivas y adaptadas a móviles
-          para ayudarte a destacar en Internet y conectar con tus clientes.
+          Diseñamos páginas web modernas, rápidas y adaptadas a móviles
+          para que tu negocio destaque y conecte con más clientes.
         </p>
         <div class="acciones">
-          <a class="boton" href="#contacto">Hablemos de tu proyecto ↗</a>
-          <a class="boton boton-secundario" href="#servicios">Descubrir servicios</a>
+          <a class="boton" href="#demo">Reserva una demo ↗</a>
+          <a class="boton boton-secundario" href="#servicios">Descubre los servicios</a>
         </div>
         <div class="confianza">
           <span>✓ Diseño adaptable</span>
-          <span>✓ Experiencia sencilla</span>
+          <span>✓ Imagen profesional</span>
           <span>✓ Atención personalizada</span>
         </div>
       </div>
@@ -333,24 +513,24 @@
     <section id="servicios">
       <div class="contenedor">
         <div class="titulo-seccion">
-          <h2>Todo lo que necesitas para crecer</h2>
-          <p>Soluciones web pensadas para presentar tu negocio de forma clara y profesional.</p>
+          <h2>Soluciones digitales para crecer</h2>
+          <p>Todo lo necesario para construir una presencia online clara, moderna y profesional.</p>
         </div>
         <div class="rejilla">
           <article class="tarjeta">
             <div class="icono">💻</div>
-            <h3>Páginas web</h3>
-            <p>Webs profesionales para presentar tus servicios, explicar lo que haces y generar confianza.</p>
+            <h3>Diseño de páginas web</h3>
+            <p>Webs atractivas que presentan tu negocio, explican tus servicios y generan confianza.</p>
           </article>
           <article class="tarjeta">
             <div class="icono">📱</div>
-            <h3>Diseño móvil</h3>
-            <p>Diseños adaptables para que tus clientes disfruten de una buena experiencia desde su teléfono.</p>
+            <h3>Diseño para móviles</h3>
+            <p>Una experiencia sencilla y cómoda para visitantes que llegan desde cualquier teléfono.</p>
           </article>
           <article class="tarjeta">
-            <div class="icono">🚀</div>
+            <div class="icono">⚡</div>
             <h3>Publicación online</h3>
-            <p>Te ayudamos a llevar tu página a Internet y a dar los primeros pasos con tu presencia digital.</p>
+            <p>Te ayudamos a llevar tu web a Internet y a establecer una base para tu presencia digital.</p>
           </article>
         </div>
       </div>
@@ -359,60 +539,126 @@
     <section id="proyectos">
       <div class="contenedor">
         <div class="titulo-seccion">
-          <h2>Ideas que toman forma</h2>
-          <p>Estos son ejemplos visuales conceptuales del tipo de proyectos que podemos desarrollar.</p>
+          <h2>Diseños que inspiran confianza</h2>
+          <p>Ejemplos conceptuales de cómo podría verse la web de distintos tipos de negocio.</p>
         </div>
         <div class="rejilla">
           <article class="tarjeta proyecto">
-            <div class="imagen-proyecto">☕</div>
+            <div class="proyecto-visual">
+              <div class="ventana-demo" aria-hidden="true">
+                <div class="puntos"><i></i><i></i><i></i></div>
+                <div class="linea azul"></div>
+                <div class="linea"></div>
+                <div class="linea corta"></div>
+              </div>
+            </div>
             <div class="proyecto-texto">
               <h3>Negocio local</h3>
-              <p>Una presencia digital cálida y cercana para cafeterías y comercios.</p>
+              <p>Una web atractiva para comercios, cafeterías y pequeños negocios.</p>
             </div>
           </article>
           <article class="tarjeta proyecto">
-            <div class="imagen-proyecto dos">✦</div>
+            <div class="proyecto-visual dos">
+              <div class="ventana-demo" aria-hidden="true">
+                <div class="puntos"><i></i><i></i><i></i></div>
+                <div class="linea azul"></div>
+                <div class="linea corta"></div>
+                <div class="linea"></div>
+              </div>
+            </div>
             <div class="proyecto-texto">
               <h3>Marca personal</h3>
-              <p>Una web limpia para profesionales que quieren mostrar su experiencia.</p>
+              <p>Una presentación profesional para expertos y emprendedores.</p>
             </div>
           </article>
           <article class="tarjeta proyecto">
-            <div class="imagen-proyecto tres">🌿</div>
+            <div class="proyecto-visual tres">
+              <div class="ventana-demo" aria-hidden="true">
+                <div class="puntos"><i></i><i></i><i></i></div>
+                <div class="linea"></div>
+                <div class="linea azul"></div>
+                <div class="linea corta"></div>
+              </div>
+            </div>
             <div class="proyecto-texto">
               <h3>Servicios profesionales</h3>
-              <p>Una presentación clara de servicios, ventajas y formas de contacto.</p>
+              <p>Una web para explicar servicios, mostrar ventajas y recibir consultas.</p>
             </div>
           </article>
         </div>
-        <p style="text-align:center;color:var(--suave);font-size:.85rem;margin-top:20px">
-          Nota: los ejemplos anteriores son ilustrativos, no trabajos de clientes reales.
-        </p>
+        <p class="nota">Los diseños mostrados son ejemplos conceptuales, no proyectos de clientes reales.</p>
       </div>
     </section>
 
-    <section class="sobre" id="sobre">
+    <section class="sobre" id="nosotros">
       <div class="contenedor">
         <div class="sobre-contenido">
-          <span class="etiqueta">Cercanía y creatividad</span>
-          <h2>Tu idea es el comienzo de algo grande.</h2>
+          <span class="etiqueta">Ideas claras. Diseño inteligente.</span>
+          <h2>Hacemos que tu idea cobre vida en Internet.</h2>
           <p>
-            Queremos que tener una página web sea más fácil de entender.
-            Escuchamos tus ideas y trabajamos para convertirlas en una
-            presencia digital clara, atractiva y alineada con tu negocio.
+            En workinbrands creemos que una buena web debe ser fácil de usar,
+            comunicar el valor de tu negocio y ayudar a tus clientes a dar el
+            siguiente paso. Queremos conocer tu idea y ayudarte a hacerla realidad.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="contacto">
+    <section id="demo">
       <div class="contenedor">
         <div class="contacto-caja">
-          <h2>¿Creamos tu próxima web?</h2>
-          <p>Cuéntanos qué tienes en mente. El primer paso para tu presencia online empieza con una conversación.</p>
-          <a class="boton" href="mailto:TU_CORREO@ejemplo.com?subject=Consulta%20sobre%20una%20p%C3%A1gina%20web">
-            Contactar por correo ↗
-          </a>
+          <div class="titulo-seccion">
+            <span class="etiqueta">Hablemos de tu proyecto</span>
+            <h2>Reserva tu demo</h2>
+            <p>Cuéntanos un poco sobre tu negocio. Prepararemos el siguiente paso para estudiar tu proyecto.</p>
+          </div>
+
+          <form class="formulario" id="formulario-demo">
+            <div class="campo">
+              <label for="nombre">Tu nombre</label>
+              <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="¿Cómo te llamas?" required>
+            </div>
+
+            <div class="campo">
+              <label for="email">Tu correo electrónico</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com" required>
+            </div>
+
+            <div class="campo">
+              <label for="negocio">Nombre de tu negocio</label>
+              <input id="negocio" name="negocio" type="text" autocomplete="organization" placeholder="Nombre de tu empresa">
+            </div>
+
+            <div class="campo">
+              <label for="servicio">¿Qué tipo de web necesitas?</label>
+              <select id="servicio" name="servicio" required>
+                <option value="">Selecciona una opción</option>
+                <option>Web para mi negocio</option>
+                <option>Portafolio profesional</option>
+                <option>Tienda online</option>
+                <option>Página personal</option>
+                <option>Otra solución</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label for="mensaje">Cuéntanos tu idea</label>
+              <textarea id="mensaje" name="mensaje" placeholder="¿Qué te gustaría conseguir con tu web?"></textarea>
+            </div>
+
+            <label class="privacidad">
+              <input id="consentimiento" type="checkbox" required>
+              <span>Autorizo que se utilicen estos datos para responder a mi solicitud de demo.</span>
+            </label>
+
+            <button class="boton" type="submit">Preparar solicitud de demo ↗</button>
+
+            <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+            <p class="nota">
+              Este formulario prepara un mensaje en tu aplicación de correo.
+              No se envían ni se almacenan datos automáticamente en esta web.
+            </p>
+          </form>
         </div>
       </div>
     </section>
@@ -420,15 +666,28 @@
 
   <footer>
     <div class="contenedor pie-contenido">
-      <span>© <span id="anio"></span> PixelNova. Todos los derechos reservados.</span>
+      <span>© <span id="anio"></span> workinbrands. Todos los derechos reservados.</span>
       <a href="#inicio">Volver arriba ↑</a>
     </div>
   </footer>
 
+  <a class="whatsapp"
+     href="https://wa.me/31684859047?text=Hola%20workinbrands%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20una%20p%C3%A1gina%20web."
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contactar con workinbrands por WhatsApp">
+    <span class="whatsapp-etiqueta">¿Hablamos?</span>
+    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path d="M16.02 3C8.86 3 3.04 8.81 3.04 15.97c0 2.28.6 4.5 1.74 6.46L3 29l6.73-1.76a12.94 12.94 0 0 0 6.28 1.6h.01C23.17 28.84 29 23.02 29 15.86 29 12.39 27.65 9.13 25.2 6.7A12.9 12.9 0 0 0 16.02 3Zm0 23.67h-.01a10.76 10.76 0 0 1-5.48-1.5l-.39-.23-4 .99 1.07-3.9-.25-.4a10.72 10.72 0 0 1-1.65-5.66c0-5.9 4.8-10.7 10.72-10.7 2.86 0 5.55 1.12 7.57 3.14a10.65 10.65 0 0 1 3.13 7.58c0 5.91-4.81 10.68-10.71 10.68Zm5.88-8.01c-.32-.16-1.9-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.83 1.05-1.02 1.27-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.6-1.6-.96-.85-1.61-1.9-1.8-2.22-.19-.32-.02-.5.14-.66.14-.14.32-.38.48-.56.16-.19.21-.32.32-.54.1-.21.05-.4-.03-.56-.08-.16-.73-1.75-1-2.39-.26-.62-.53-.54-.73-.55h-.62c-.21 0-.56.08-.86.4-.3.32-1.13 1.1-1.13 2.68 0 1.59 1.16 3.12 1.32 3.34.16.21 2.28 3.49 5.52 4.89.77.33 1.37.53 1.84.68.77.24 1.47.21 2.03.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.14-.29-.22-.61-.38Z"/>
+    </svg>
+  </a>
+
   <script>
     document.getElementById("anio").textContent = new Date().getFullYear();
-  </script>
 
-</body>
-  </html>
-      
+    document.getElementById("formulario-demo").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const nombre = document.getElementById("nombre").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const negocio = document.getElementById("n
