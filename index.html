@@ -690,4 +690,38 @@
 
       const nombre = document.getElementById("nombre").value.trim();
       const email = document.getElementById("email").value.trim();
-      const negocio = document.getElementById("n
+      const negocio = document.getElementById("negocio").value.trim();
+const servicio = document.getElementById("servicio").value;
+const mensaje = document.getElementById("mensaje").value.trim();
+const consentimiento = document.getElementById("consentimiento").checked;
+const aviso = document.getElementById("aviso");
+
+if (!nombre || !email || !servicio || !consentimiento) {
+  aviso.textContent = "Completa los campos obligatorios y acepta el aviso para continuar.";
+  aviso.classList.add("visible");
+  return;
+}
+
+const asunto = "Solicitud de demo web - " + nombre;
+const cuerpo =
+  "Hola workinbrands,\n\n" +
+  "Quiero solicitar una demo.\n\n" +
+  "Nombre: " + nombre + "\n" +
+  "Correo: " + email + "\n" +
+  "Negocio: " + (negocio || "No indicado") + "\n" +
+  "Tipo de web: " + servicio + "\n" +
+  "Idea del proyecto: " + (mensaje || "No indicado") + "\n\n" +
+  "Enviado desde el formulario de workinbrands.";
+
+aviso.textContent = "Vamos a abrir tu aplicación de correo con la solicitud preparada. Revisa el mensaje y pulsa Enviar para hacernos llegar tu petición.";
+aviso.classList.add("visible");
+
+window.location.href =
+  "mailto:moradalimarketing@gmail.com?subject=" +
+  encodeURIComponent(asunto) +
+  "&body=" +
+  encodeURIComponent(cuerpo);
+});
+</script>
+</body>
+</html>
