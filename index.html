@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10101a">
+  <meta name="description" content="Creamos páginas web modernas, rápidas y adaptadas a móviles para impulsar tu negocio.">
+  <title>PixelNova | Diseño web para tu negocio</title>
+  <style>
+    :root {
+      --fondo: #10101a;
+      --panel: #191927;
+      --texto: #f7f5ff;
+      --suave: #b6b3c9;
+      --acento: #a78bfa;
+      --acento2: #6d5dfc;
+      --borde: rgba(255,255,255,.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--fondo);
+      color: var(--texto);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .contenedor {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(16,16,26,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--borde);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -.5px;
+    }
+
+    .logo span { color: var(--acento); }
+
+    .enlaces {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: .92rem;
+      color: var(--suave);
+    }
+
+    .enlaces a:hover { color: white; }
+
+    .boton {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-weight: 750;
+      background: linear-gradient(135deg, var(--acento2), var(--acento));
+      color: white;
+      border: 0;
+      cursor: pointer;
+      transition: transform .2s, opacity .2s;
+    }
+
+    .boton:hover { transform: translateY(-2px); }
+
+    .boton-secundario {
+      background: transparent;
+      border: 1px solid var(--borde);
+    }
+
+    .portada {
+      padding: 100px 0 85px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(109,93,252,.22), transparent 60%);
+    }
+
+    .etiqueta {
+      display: inline-block;
+      padding: 7px 13px;
+      border: 1px solid rgba(167,139,250,.35);
+      background: rgba(167,139,250,.08);
+      color: #d8caff;
+      border-radius: 999px;
+      font-size: .85rem;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 4.8rem);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      max-width: 850px;
+      margin: 0 auto 22px;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, #c4b5fd, #818cf8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .introduccion {
+      color: var(--suave);
+      max-width: 650px;
+      margin: 0 auto 30px;
+      font-size: 1.08rem;
+    }
+
+    .acciones {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .confianza {
+      margin-top: 45px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      color: var(--suave);
+      font-size: .9rem;
+    }
+
+    section { padding: 78px 0; }
+
+    .titulo-seccion {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 38px;
+    }
+
+    .titulo-seccion h2 {
+      font-size: clamp(1.9rem, 5vw, 2.8rem);
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin: 0 0 12px;
+    }
+
+    .titulo-seccion p { color: var(--suave); }
+
+    .rejilla {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .tarjeta {
+      padding: 25px;
+      background: var(--panel);
+      border: 1px solid var(--borde);
+      border-radius: 18px;
+    }
+
+    .icono {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(167,139,250,.12);
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+    }
+
+    .tarjeta h3 { margin: 0 0 10px; }
+
+    .tarjeta p {
+      margin: 0;
+      color: var(--suave);
+      font-size: .95rem;
+    }
+
+    .proyecto {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .imagen-proyecto {
+      min-height: 160px;
+      display: grid;
+      place-items: center;
+      font-size: 3.5rem;
+      background: linear-gradient(135deg, #37306c, #1c5964);
+    }
+
+    .imagen-proyecto.dos {
+      background: linear-gradient(135deg, #633c69, #272b58);
+    }
+
+    .imagen-proyecto.tres {
+      background: linear-gradient(135deg, #245a56, #273452);
+    }
+
+    .proyecto-texto { padding: 22px; }
+
+    .proyecto-texto h3 { margin-top: 0; }
+
+    .proyecto-texto p {
+      color: var(--suave);
+      font-size: .92rem;
+    }
+
+    .sobre {
+      background: rgba(255,255,255,.025);
+      border-top: 1px solid var(--borde);
+      border-bottom: 1px solid var(--borde);
+    }
+
+    .sobre-contenido {
+      max-width: 760px;
+      text-align: center;
+      margin: auto;
+    }
+
+    .sobre-contenido p { color: var(--suave); }
+
+    .contacto-caja {
+      text-align: center;
+      padding: 45px 28px;
+      border: 1px solid rgba(167,139,250,.3);
+      border-radius: 24px;
+      background: radial-gradient(ellipse at top, rgba(109,93,252,.18), transparent 75%), var(--panel);
+    }
+
+    .contacto-caja h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 0 0 12px;
+    }
+
+    .contacto-caja p {
+      color: var(--suave);
+      max-width: 550px;
+      margin: 0 auto 25px;
+    }
+
+    footer {
+      border-top: 1px solid var(--borde);
+      padding: 25px 0;
+      color: var(--suave);
+      font-size: .88rem;
+    }
+
+    .pie-contenido {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    @media (max-width: 760px) {
+      .enlaces { gap: 12px; font-size: .82rem; }
+      .enlaces .contacto-nav { display: none; }
+      .portada { padding: 75px 0 65px; }
+      section { padding: 60px 0; }
+      .rejilla { grid-template-columns: 1fr; }
+      .tarjeta { padding: 22px; }
+      h1 { letter-spacing: -1.4px; }
+    }
+
+    @media (max-width: 380px) {
+      .logo { font-size: 1.05rem; }
+      .enlaces { gap: 9px; font-size: .76rem; }
+      .contenedor { width: 92%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="contenedor" aria-label="Navegación principal">
+      <a class="logo" href="#inicio">Pixel<span>Nova</span></a>
+      <div class="enlaces">
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#sobre">Nosotros</a>
+        <a class="contacto-nav" href="#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="portada" id="inicio">
+      <div class="contenedor">
+        <span class="etiqueta">✦ Diseño web para negocios con ambición</span>
+        <h1>Tu negocio merece una web <span>extraordinaria.</span></h1>
+        <p class="introduccion">
+          Creamos páginas web modernas, atractivas y adaptadas a móviles
+          para ayudarte a destacar en Internet y conectar con tus clientes.
+        </p>
+        <div class="acciones">
+          <a class="boton" href="#contacto">Hablemos de tu proyecto ↗</a>
+          <a class="boton boton-secundario" href="#servicios">Descubrir servicios</a>
+        </div>
+        <div class="confianza">
+          <span>✓ Diseño adaptable</span>
+          <span>✓ Experiencia sencilla</span>
+          <span>✓ Atención personalizada</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="contenedor">
+        <div class="titulo-seccion">
+          <h2>Todo lo que necesitas para crecer</h2>
+          <p>Soluciones web pensadas para presentar tu negocio de forma clara y profesional.</p>
+        </div>
+        <div class="rejilla">
+          <article class="tarjeta">
+            <div class="icono">💻</div>
+            <h3>Páginas web</h3>
+            <p>Webs profesionales para presentar tus servicios, explicar lo que haces y generar confianza.</p>
+          </article>
+          <article class="tarjeta">
+            <div class="icono">📱</div>
+            <h3>Diseño móvil</h3>
+            <p>Diseños adaptables para que tus clientes disfruten de una buena experiencia desde su teléfono.</p>
+          </article>
+          <article class="tarjeta">
+            <div class="icono">🚀</div>
+            <h3>Publicación online</h3>
+            <p>Te ayudamos a llevar tu página a Internet y a dar los primeros pasos con tu presencia digital.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos">
+      <div class="contenedor">
+        <div class="titulo-seccion">
+          <h2>Ideas que toman forma</h2>
+          <p>Estos son ejemplos visuales conceptuales del tipo de proyectos que podemos desarrollar.</p>
+        </div>
+        <div class="rejilla">
+          <article class="tarjeta proyecto">
+            <div class="imagen-proyecto">☕</div>
+            <div class="proyecto-texto">
+              <h3>Negocio local</h3>
+              <p>Una presencia digital cálida y cercana para cafeterías y comercios.</p>
+            </div>
+          </article>
+          <article class="tarjeta proyecto">
+            <div class="imagen-proyecto dos">✦</div>
+            <div class="proyecto-texto">
+              <h3>Marca personal</h3>
+              <p>Una web limpia para profesionales que quieren mostrar su experiencia.</p>
+            </div>
+          </article>
+          <article class="tarjeta proyecto">
+            <div class="imagen-proyecto tres">🌿</div>
+            <div class="proyecto-texto">
+              <h3>Servicios profesionales</h3>
+              <p>Una presentación clara de servicios, ventajas y formas de contacto.</p>
+            </div>
+          </article>
+        </div>
+        <p style="text-align:center;color:var(--suave);font-size:.85rem;margin-top:20px">
+          Nota: los ejemplos anteriores son ilustrativos, no trabajos de clientes reales.
+        </p>
+      </div>
+    </section>
+
+    <section class="sobre" id="sobre">
+      <div class="contenedor">
+        <div class="sobre-contenido">
+          <span class="etiqueta">Cercanía y creatividad</span>
+          <h2>Tu idea es el comienzo de algo grande.</h2>
+          <p>
+            Queremos que tener una página web sea más fácil de entender.
+            Escuchamos tus ideas y trabajamos para convertirlas en una
+            presencia digital clara, atractiva y alineada con tu negocio.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="contenedor">
+        <div class="contacto-caja">
+          <h2>¿Creamos tu próxima web?</h2>
+          <p>Cuéntanos qué tienes en mente. El primer paso para tu presencia online empieza con una conversación.</p>
+          <a class="boton" href="mailto:TU_CORREO@ejemplo.com?subject=Consulta%20sobre%20una%20p%C3%A1gina%20web">
+            Contactar por correo ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contenedor pie-contenido">
+      <span>© <span id="anio"></span> PixelNova. Todos los derechos reservados.</span>
+      <a href="#inicio">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("anio").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+  </html>
+      
