@@ -1272,47 +1272,5 @@
       setTimeout(loadTally, 500);
     })();
   </script>
-  
-<!-- BANNER DE COOKIES CORREGIDO Y SEGURO -->
-<div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background-color: #0f172a; color: #ffffff; padding: 16px; z-index: 999999; box-shadow: 0 -4px 20px rgba(0,0,0,0.5); font-family: sans-serif; border-top: 2px solid #38bdf8;">
-    <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px;">
-        <div style="font-size: 13px; line-height: 1.4; color: #e2e8f0;">
-            <strong>Uso de cookies:</strong> Utilizamos cookies analíticas para mejorar la experiencia de navegación. Puedes aceptarlas o rechazarlas.
-        </div>
-        <div style="display: flex; gap: 10px; justify-content: flex-end;">
-            <button onclick="rechazarTodas()" style="background-color: #334155; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: bold; cursor: pointer;">Rechazar</button>
-            <button onclick="aceptarTodas()" style="background-color: #0284c7; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: bold; cursor: pointer;">Aceptar</button>
-        </div>
-    </div>
-</div>
-
-<!-- SCRIPT DE ACTIVACIÓN -->
-<script>
-    function comprobarConsentimiento() {
-        const consentimiento = localStorage.getItem('workinbrands_cookie_consent');
-        if (!consentimiento) {
-            document.getElementById('cookie-banner').style.display = 'block';
-        } else if (consentimiento === 'accepted') {
-            activarAnaliticas();
-        }
-    }
-
-    function aceptarTodas() {
-        localStorage.setItem('workinbrands_cookie_consent', 'accepted');
-        document.getElementById('cookie-banner').style.display = 'none';
-        activarAnaliticas();
-    }
-
-    function rechazarTodas() {
-        localStorage.setItem('workinbrands_cookie_consent', 'rejected');
-        document.getElementById('cookie-banner').style.display = 'none';
-    }
-
-    function activarAnaliticas() {
-        console.log("Consentimiento concedido.");
-    }
-
-    window.addEventListener('DOMContentLoaded', comprobarConsentimiento);
-</script>
 </body>
 </html>
