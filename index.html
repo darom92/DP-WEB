@@ -1272,28 +1272,26 @@
       setTimeout(loadTally, 500);
     })();
   </script>
-<!-- 1. HTML DEL BANNER DE COOKIES -->
-<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-slate-900/95 text-white p-6 z-50 hidden border-t border-slate-800">
-    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <div class="text-xs text-slate-300">
-            <p class="font-semibold text-white mb-1">Uso de cookies en workinbrands.es</p>
-            <p>Utilizamos cookies analíticas para mejorar la experiencia de navegación. Puedes aceptarlas o rechazarlas.</p>
+  
+<!-- BANNER DE COOKIES CORREGIDO Y SEGURO -->
+<div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background-color: #0f172a; color: #ffffff; padding: 16px; z-index: 999999; box-shadow: 0 -4px 20px rgba(0,0,0,0.5); font-family: sans-serif; border-top: 2px solid #38bdf8;">
+    <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 13px; line-height: 1.4; color: #e2e8f0;">
+            <strong>Uso de cookies:</strong> Utilizamos cookies analíticas para mejorar la experiencia de navegación. Puedes aceptarlas o rechazarlas.
         </div>
-        <div class="flex gap-3">
-            <button onclick="rechazarTodas()" class="bg-slate-800 text-slate-200 px-4 py-2 rounded text-xs hover:bg-slate-700 transition">Rechazar</button>
-            <button onclick="aceptarTodas()" class="bg-sky-600 text-white px-5 py-2 rounded text-xs font-bold hover:bg-sky-500 transition">Aceptar</button>
+        <div style="display: flex; gap: 10px; justify-content: flex-end;">
+            <button onclick="rechazarTodas()" style="background-color: #334155; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: bold; cursor: pointer;">Rechazar</button>
+            <button onclick="aceptarTodas()" style="background-color: #0284c7; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: bold; cursor: pointer;">Aceptar</button>
         </div>
     </div>
 </div>
 
-<!-- 2. SCRIPT DE ACTIVACIÓN (CEREBRO) -->
+<!-- SCRIPT DE ACTIVACIÓN -->
 <script>
     function comprobarConsentimiento() {
         const consentimiento = localStorage.getItem('workinbrands_cookie_consent');
-        
-        // Si nunca ha elegido, hace saltar el banner
         if (!consentimiento) {
-            document.getElementById('cookie-banner').classList.remove('hidden');
+            document.getElementById('cookie-banner').style.display = 'block';
         } else if (consentimiento === 'accepted') {
             activarAnaliticas();
         }
@@ -1301,24 +1299,22 @@
 
     function aceptarTodas() {
         localStorage.setItem('workinbrands_cookie_consent', 'accepted');
-        document.getElementById('cookie-banner').classList.add('hidden');
+        document.getElementById('cookie-banner').style.display = 'none';
         activarAnaliticas();
     }
 
     function rechazarTodas() {
         localStorage.setItem('workinbrands_cookie_consent', 'rejected');
-        document.getElementById('cookie-banner').classList.add('hidden');
+        document.getElementById('cookie-banner').style.display = 'none';
     }
 
     function activarAnaliticas() {
-        // En el futuro, cuando tengas Google Analytics, pondremos su código aquí.
-        // Por ahora lo dejamos preparado sin que haga nada:
-        console.log("Consentimiento concedido. Listo para integrar Google Analytics.");
+        console.log("Consentimiento concedido.");
     }
 
-    // Ejecuta la comprobación en cuanto carga el documento
     window.addEventListener('DOMContentLoaded', comprobarConsentimiento);
 </script>
+
   
 </body>
 </html>
