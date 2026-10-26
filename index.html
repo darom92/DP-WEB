@@ -1272,5 +1272,17 @@
       setTimeout(loadTally, 500);
     })();
   </script>
+  <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background-color: #0f172a; color: #ffffff; padding: 16px; z-index: 999999; border-top: 2px solid #38bdf8;">
+    <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 13px; color: #e2e8f0;">
+            <strong>Uso de cookies:</strong> Utilizamos cookies analíticas para mejorar la experiencia. Puedes aceptarlas o rechazarlas.
+        </div>
+        <div style="display: flex; gap: 10px; justify-content: flex-end;">
+            <button id="btn-rechazar-cookie" type="button" style="background-color: #334155; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-size: 12px; cursor: pointer;">Rechazar</button>
+            <button id="btn-aceptar-cookie" type="button" style="background-color: #0284c7; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-size: 12px; cursor: pointer;">Aceptar</button>
+        </div>
+    </div>
+  </div>
+  
 </body>
 </html>
