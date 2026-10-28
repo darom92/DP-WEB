@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear página web gratis para negocio | workinbrands</title>
+  <meta name="description" content="Aprende a crear página web gratis para negocio con Google Sites. Guía paso a paso para publicar tu web sin pagar y empezar a captar clientes.">
+  <meta name="keywords" content="crear página web gratis para negocio, página web gratis, crear página web gratis, web gratis para negocio, Google Sites">
+  <meta name="theme-color" content="#080d18">
+  <link rel="canonical" href="https://workinbrands.es/crear-pagina-web-gratis-para-negocio">
+  <style>
+    :root {
+      --fondo: #080d18;
+      --fondo-tarjeta: #111a2e;
+      --texto: #f2f5fb;
+      --texto-suave: #b4bdd1;
+      --acento: #3b82f6; /* Cambia por el color de acento de tu web */
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      line-height: 1.65;
+    }
+    header, footer {
+      padding: 20px;
+      text-align: center;
+    }
+    header a, footer a {
+      color: var(--texto-suave);
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 0.95rem;
+    }
+    header a:hover, footer a:hover { color: var(--texto); }
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--texto);
+      display: block;
+      margin-bottom: 10px;
+    }
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.15;
+      margin: 0 0 16px;
+    }
+    h2 {
+      color: var(--acento);
+      font-size: 1.5rem;
+      margin: 48px 0 16px;
+    }
+    .intro {
+      color: var(--texto-suave);
+      font-size: 1.1rem;
+    }
+    ol.pasos {
+      list-style: none;
+      padding: 0;
+      counter-reset: paso;
+      display: grid;
+      gap: 14px;
+    }
+    ol.pasos li {
+      counter-increment: paso;
+      background: var(--fondo-tarjeta);
+      border-left: 4px solid var(--acento);
+      border-radius: 10px;
+      padding: 16px 20px 16px 58px;
+      position: relative;
+    }
+    ol.pasos li::before {
+      content: counter(paso);
+      position: absolute;
+      left: 18px;
+      top: 16px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--acento);
+      color: #fff;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+      font-size: 0.9rem;
+    }
+    .tarjetas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .tarjeta {
+      background: var(--fondo-tarjeta);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .tarjeta strong { display: block; margin-bottom: 6px; }
+    .tarjeta p { margin: 0; color: var(--texto-suave); font-size: 0.95rem; }
+    .cta {
+      display: inline-block;
+      margin-top: 36px;
+      background: var(--acento);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 14px 26px;
+      border-radius: 999px;
+    }
+    .cta:hover { opacity: 0.9; }
+    footer { color: var(--texto-suave); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="https://workinbrands.es">workinbrands</a>
+    <nav>
+      <a href="https://workinbrands.es/#servicios">Servicios</a>
+      <a href="https://workinbrands.es/#proyectos">Proyectos</a>
+      <a href="https://workinbrands.es/#faq">FAQ</a>
+      <a href="https://workinbrands.es/#demo">Demo</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Crear página web gratis para negocio</h1>
+    <p class="intro">
+      Tener presencia en internet no tiene por qué costar dinero. Con Google Sites puedes crear una página profesional, gratuita y fácil de editar para dar a conocer tu negocio, mostrar tus servicios y recibir consultas de clientes.
+    </p>
+
+    <h2>Cómo crear tu página web gratis en Google Sites</h2>
+    <ol class="pasos">
+      <li><strong>Entra en Google Sites.</strong> Ve a sites.google.com e inicia sesión con tu cuenta de Google.</li>
+      <li><strong>Crea una página nueva.</strong> Pulsa en "+ Nuevo" o elige una plantilla que se adapte a tu negocio.</li>
+      <li><strong>Pon el nombre de tu negocio.</strong> Escribe el título de la página y añade un logotipo o una imagen de portada.</li>
+      <li><strong>Añade tus secciones.</strong> Incluye información sobre tu negocio, servicios, precios, fotos y contacto.</li>
+      <li><strong>Incluye un formulario o tu contacto.</strong> Puedes insertar un formulario de Google Forms o un botón de WhatsApp.</li>
+      <li><strong>Revisa cómo se ve en el móvil.</strong> Usa la vista previa para comprobar que todo se lee bien desde el teléfono.</li>
+      <li><strong>Publica tu web.</strong> Pulsa en "Publicar" y elige la dirección gratuita de tu sitio.</li>
+    </ol>
+
+    <h2>Qué ganas con Google Sites</h2>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <strong>Gratis</strong>
+        <p>No necesitas pagar para empezar ni para publicar tu página.</p>
+      </div>
+      <div class="tarjeta">
+        <strong>Fácil de editar</strong>
+        <p>Arrastra y suelta textos, imágenes y bloques sin saber programar.</p>
+      </div>
+      <div class="tarjeta">
+        <strong>Conectado con Google</strong>
+        <p>Integra mapas, formularios, calendario y Google Drive.</p>
+      </div>
+    </div>
+
+    <h2>¿Quieres una web profesional diseñada para ti?</h2>
+    <p>Si prefieres una página más completa, con diseño a medida, SEO básico y botones de contacto, en workinbrands la creamos contigo.</p>
+    <a class="cta" href="https://workinbrands.es/#demo">Quiero mi demo gratuita</a>
+  </main>
+
+  <footer>
+    <p>© workinbrands. Todos los derechos reservados.</p>
+    <a href="https://workinbrands.es/Cookies">Política de Cookies</a>
+    <a href="https://workinbrands.es/AvisoLegal">Aviso Legal</a>
+    <a href="https://workinbrands.es/Pol%C3%ADticadePrivacidad">Política de Privacidad</a>
+  </footer>
+
+</body>
+</html>
