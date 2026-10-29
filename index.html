@@ -1377,6 +1377,73 @@
     });
 })();
 </script>
+  
+
+<!-- Chat flotante de WorkinBrands -->
+<style>
+  #wb-chat-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 99999;
+    background: #111827;
+    color: white;
+    border: 0;
+    border-radius: 30px;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 14px #0004;
+  }
+
+  #wb-chat-window {
+    display: none;
+    position: fixed;
+    right: 16px;
+    bottom: 85px;
+    width: min(360px, calc(100vw - 32px));
+    height: min(520px, calc(100dvh - 120px));
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    z-index: 99999;
+    box-shadow: 0 5px 25px #0004;
+  }
+
+  #wb-chat-window iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>
+
+<button id="wb-chat-button" type="button"
+  aria-expanded="false" aria-controls="wb-chat-window">
+  💬 Habla con nosotros
+</button>
+
+<div id="wb-chat-window">
+  <iframe
+    src="https://llm-chat-app-template.moradalimarketing.workers.dev/"
+    title="Asistente virtual de WorkinBrands"
+    loading="lazy">
+  </iframe>
+</div>
+
+<script>
+  const wbButton = document.getElementById("wb-chat-button");
+  const wbWindow = document.getElementById("wb-chat-window");
+
+  wbButton.addEventListener("click", function () {
+    const isOpen = wbWindow.style.display === "block";
+    wbWindow.style.display = isOpen ? "none" : "block";
+    wbButton.setAttribute("aria-expanded", String(!isOpen));
+    wbButton.textContent = isOpen
+      ? "💬 Habla con nosotros"
+      : "✕ Cerrar chat";
+  });
+</script>
 
 </body>
 </html>
