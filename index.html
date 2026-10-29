@@ -1444,39 +1444,36 @@
 </div>
 
 
+
 <script>
   const wbButton = document.getElementById("wb-chat-button");
   const wbWindow = document.getElementById("wb-chat-window");
 
-  const iconChat = `
-    <svg viewBox="0 0 24 24" width="30" height="30"
-      fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round"
-      aria-hidden="true">
-      <path d="M21 11.5a8.5 8.5 0 0 1-12.8 7.3L3 20l1.2-4.2A8.5 8.5 0 1 1 21 11.5Z"/>
-    </svg>`;
-
-  const iconClose = `
-    <svg viewBox="0 0 24 24" width="30" height="30"
-      fill="none" stroke="currentColor" stroke-width="2.5"
-      stroke-linecap="round" aria-hidden="true">
-      <path d="M18 6 6 18M6 6l12 12"/>
-    </svg>`;
-
   wbButton.addEventListener("click", function () {
-    const isOpen = wbWindow.style.display === "block";
+    const abierto = wbWindow.style.display === "block";
 
-    wbWindow.style.display = isOpen ? "none" : "block";
-    wbButton.setAttribute("aria-expanded", String(!isOpen));
-    wbButton.setAttribute(
-      "aria-label",
-      isOpen ? "Abrir asistente" : "Cerrar asistente"
-    );
-
-    wbButton.innerHTML = isOpen ? iconChat : iconClose;
+    if (abierto) {
+      wbWindow.style.display = "none";
+      wbButton.setAttribute("aria-expanded", "false");
+      wbButton.setAttribute("aria-label", "Abrir asistente");
+      wbButton.innerHTML = `
+        <svg viewBox="0 0 24 24" width="30" height="30"
+          fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 11.5a8.5 8.5 0 0 1-12.8 7.3L3 20l1.2-4.2A8.5 8.5 0 1 1 21 11.5Z"/>
+        </svg>`;
+    } else {
+      wbWindow.style.display = "block";
+      wbButton.setAttribute("aria-expanded", "true");
+      wbButton.setAttribute("aria-label", "Minimizar asistente");
+      wbButton.innerHTML = `
+        <svg viewBox="0 0 24 24" width="30" height="30"
+          fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round">
+          <path d="M18 6 6 18M6 6l12 12"/>
+        </svg>`;
+    }
   });
 </script>
-
-
-</body>
+</body> 
 </html>
