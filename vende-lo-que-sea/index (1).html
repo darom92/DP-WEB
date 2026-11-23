@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vende lo que sea a quien sea</title>
+<meta name="description" content="Ebook en PDF con cinco capítulos para entender a tu comprador, persuadir sin presionar y cerrar ventas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #070b16;
+    --navy: #0c1832;
+    --gold: #e9c46a;
+    --gold-deep: #b8913f;
+    --paper: #f4efe3;
+    --smoke: #a9adba;
+    --line: rgba(233, 196, 106, 0.28);
+    --panel: rgba(12, 24, 50, 0.6);
+    --display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+    --body: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--ink); }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse 80% 55% at 50% 0%, rgba(40, 70, 130, 0.45), transparent 70%),
+      radial-gradient(ellipse 70% 60% at 0% 100%, rgba(30, 55, 105, 0.5), transparent 70%),
+      linear-gradient(180deg, var(--navy) 0%, var(--ink) 100%);
+    background-color: var(--ink);
+    color: var(--paper);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  img, svg { max-width: 100%; display: block; }
+  h1, h2, h3 { font-family: var(--display); margin: 0; line-height: 1.12; text-wrap: balance; }
+  p { margin: 0; }
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  .wrap { max-width: 1100px; margin: 0 auto; }
+
+  .gold-text {
+    background: linear-gradient(100deg, #b8913f 0%, #f5e2a4 32%, #c9a24e 58%, #fbeab6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Hero: cover image and the one main action */
+  .hero {
+    padding-block: 48px 40px;
+    text-align: center;
+  }
+  .cover {
+    height: min(520px, 68vh);
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8);
+  }
+  .cta-row { margin-top: 36px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .btn {
+    display: inline-block;
+    width: min(100%, 460px);
+    background: linear-gradient(100deg, #b8913f 0%, #f3d98a 50%, #c9a24e 100%);
+    color: #0b0f1c;
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(18px, 2.4vw, 22px);
+    letter-spacing: 0.03em;
+    padding: 24px 40px;
+    border-radius: 999px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 12px 34px -10px rgba(233, 196, 106, 0.6);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -10px rgba(233, 196, 106, 0.75); }
+  .cta-note { font-size: 13px; color: var(--smoke); letter-spacing: 0.04em; }
+
+  /* Sections */
+  section.block { padding-block: 84px; border-top: 1px solid var(--line); }
+  .head { text-align: center; margin: 0 auto 48px; max-width: 640px; }
+  .eyebrow { font-family: var(--display); font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+  .head h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 700; margin-top: 12px; }
+  .head p { color: var(--smoke); margin-top: 14px; font-size: 17px; }
+
+  /* Chapters */
+  .chapters { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .chapter {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 30px 30px 28px;
+    min-width: 0;
+  }
+  .chapter:last-child { grid-column: 1 / -1; }
+  .chapter .num {
+    font-family: var(--display); font-weight: 800; font-size: 44px; line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .chapter h3 { font-size: 21px; font-weight: 700; margin-top: 16px; }
+  .chapter p { color: var(--smoke); margin-top: 10px; font-size: 15px; }
+
+  /* Audience */
+  .audience { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .card { border-top: 1px solid var(--gold-deep); padding: 26px 4px 0; min-width: 0; }
+  .card h3 { font-size: 19px; font-weight: 700; color: var(--paper); }
+  .card p { color: var(--smoke); margin-top: 10px; font-size: 15px; }
+
+  /* Comments */
+  .comments-wrap {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 36px clamp(18px, 4vw, 40px);
+    min-width: 0;
+  }
+  .comments-wrap #disqus_thread { min-height: 120px; color: var(--paper); }
+  .comments-wrap[hidden] { display: none; }
+
+  @media (max-width: 860px) {
+    .audience { grid-template-columns: 1fr; }
+    .hero { padding-block: 32px 24px; }
+    section.block { padding-block: 60px; }
+  }
+  @media (max-width: 620px) {
+    .chapters { grid-template-columns: 1fr; }
+    .chapter:last-child { grid-column: auto; }
+    .btn { padding: 22px 24px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <main>
+    <section class="hero" id="descargar">
+      <img class="cover" src="portada.jpg" alt="Portada del ebook Vende lo que sea a quien sea" width="1655" height="2340">
+
+      <div class="cta-row">
+        <a class="btn" href="vende-lo-que-sea.pdf" download>Descargar el ebook en PDF</a>
+        <span class="cta-note">Formato PDF · Lectura en cualquier dispositivo</span>
+      </div>
+    </section>
+
+    <section class="block" id="capitulos">
+      <div class="head">
+        <p class="eyebrow">Índice</p>
+        <h2 class="gold-text">Cinco capítulos, un proceso</h2>
+        <p>Cada capítulo se apoya en el anterior: primero entiendes a la persona, luego la convences y por último cierras.</p>
+      </div>
+      <div class="chapters">
+        <article class="chapter">
+          <div class="num gold-text">01</div>
+          <h3>La psicología del comprador</h3>
+          <p>Aprende a entender a las personas antes de hablarles de tu producto.</p>
+        </article>
+        <article class="chapter">
+          <div class="num gold-text">02</div>
+          <h3>El arte de la persuasión</h3>
+          <p>Cómo convencer sin presionar y sin perder la confianza de quien escucha.</p>
+        </article>
+        <article class="chapter">
+          <div class="num gold-text">03</div>
+          <h3>Técnicas de venta</h3>
+          <p>Cómo vender cualquier producto o servicio con un método que se adapta a cada caso.</p>
+        </article>
+        <article class="chapter">
+          <div class="num gold-text">04</div>
+          <h3>Manejo de objeciones</h3>
+          <p>Cómo transformar un no en un sí, respondiendo a las dudas que realmente frenan la compra.</p>
+        </article>
+        <article class="chapter">
+          <div class="num gold-text">05</div>
+          <h3>El cierre de ventas</h3>
+          <p>Cómo convertir conversaciones en dinero con un cierre natural y directo.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="head">
+        <p class="eyebrow">Para quién es</p>
+        <h2 class="gold-text">Si tienes que vender algo, esto es para ti</h2>
+      </div>
+      <div class="audience">
+        <article class="card">
+          <h3>Emprendedores</h3>
+          <p>Si vendes tu propio producto o servicio y todavía no tienes un proceso claro para cerrar.</p>
+        </article>
+        <article class="card">
+          <h3>Equipos comerciales</h3>
+          <p>Si necesitas que tu equipo maneje objeciones y cierre con más seguridad.</p>
+        </article>
+        <article class="card">
+          <h3>Quien empieza en ventas</h3>
+          <p>Si quieres entender cómo funciona una venta antes de tener experiencia.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="comentarios">
+      <div class="head">
+        <p class="eyebrow">Comentarios</p>
+        <h2 class="gold-text">Cuéntanos qué te pareció</h2>
+        <p>Deja tu opinión, tus dudas o cómo te está yendo con el método.</p>
+      </div>
+      <div class="comments-wrap" id="comments-wrap" hidden>
+        <div id="disqus_thread"></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  /*
+    COMENTARIOS (Disqus)
+    1. Crea una cuenta gratuita en https://disqus.com/admin/create/ y añade el sitio.
+    2. Copia el "shortname" que te den.
+    3. Pégalo en DISQUS_SHORTNAME abajo. Mientras esté vacío, la sección no se muestra.
+  */
+  var DISQUS_SHORTNAME = "";
+
+  (function () {
+    if (!DISQUS_SHORTNAME) return;
+    var wrap = document.getElementById("comments-wrap");
+    wrap.hidden = false;
+    window.disqus_config = function () {
+      this.page.url = window.location.href.split("#")[0];
+      this.page.identifier = "vende-lo-que-sea";
+    };
+    var s = document.createElement("script");
+    s.src = "https://" + DISQUS_SHORTNAME + ".disqus.com/embed.js";
+    s.async = true;
+    s.setAttribute("data-timestamp", String(+new Date()));
+    document.body.appendChild(s);
+  })();
+</script>
+</body>
+</html>
